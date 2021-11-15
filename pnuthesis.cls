@@ -97,12 +97,18 @@
 % renew related strings if Korean.
 
 \if@Korean
-\renewcommand{\contentsname}{목차\hfill}
+\renewcommand{\contentsname}{목~~차\hfill}
+\renewcommand{\listfigurename}{그림 목록}
+\renewcommand{\listtablename}{표 목록}
 \renewcommand{\cftaftertoctitle}{\hfill}
 \renewcommand{\bibname}{참고 문헌}
+\renewcommand{\figurename}{그림}
+\renewcommand{\tablename}{그림}
 \else
 \renewcommand{\contentsname}{Contents}
 \renewcommand{\bibname}{References}
+\renewcommand{\figurename}{Figure}
+\renewcommand{\tablename}{Table}
 \fi
 
 \renewcommand{\title}[2][korean]{%
@@ -170,6 +176,7 @@
 	\pagenumbering{arabic}
     }
 \AtEndDocument{
+	\pagebreak
 	\if@Korean
 	\pushAbstract[english]
 	\else
@@ -188,7 +195,7 @@
 	\if@Korean
 	% \chapter*{부록}
 	\begin{center}
-		\Huge\textbf{부록}
+		\Huge\textbf{부~~록}
 	\end{center}
 	\addcontentsline{toc}{chapter}{부록}
 	\else
@@ -570,6 +577,7 @@
 %% 목차
 %%
 \newcommand{\makelists}{%
+	\pagenumbering{roman}
 	\if@Korean
 		\tableofcontents
 		\clearpage
@@ -589,6 +597,7 @@
 	\else
 	\pushAbstract[english]
 	\fi
+	\pagenumbering{arabic}
 }
 
 % Typesetting for toc, tot, tof
