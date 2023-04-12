@@ -103,7 +103,7 @@
 \renewcommand{\cftaftertoctitle}{\hfill}
 \renewcommand{\bibname}{참고 문헌}
 \renewcommand{\figurename}{그림}
-\renewcommand{\tablename}{그림}
+\renewcommand{\tablename}{표}
 \else
 \renewcommand{\contentsname}{Contents}
 \renewcommand{\bibname}{References}
@@ -529,9 +529,11 @@
 	\vspace*{-0.0cm}
 	\fontsize{11pt}{13pt}
 	\selectfont
+	\end{center}
+	\begin{justify}
 }{  %\setcounter{pagemarker}{\value{page}}
     % \addtocounter{pagemarker}{1}
-	\end{center}
+	\end{justify}
     \newpage \pagenumbering{arabic}
     \let\linebreak\@tempbreak
 }
